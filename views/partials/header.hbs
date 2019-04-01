@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Express Cart</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <!-- common -->
+    <!--<link rel="stylesheet" href="/stylesheets/register.css" type="text/css">-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="/stylesheets/base.css" type="text/css" media="all" />
+
+</head>
+
+<body>
+    <section role="main" id="wrapper">
+        <header id="site-header" role="header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <a href="/" rel="home">
+                                <img src="/images/logo.png" />
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div>
+                            <button type="button" class="btn" data-toggle="modal" data-target="#addProductModal" style="background-color:#696969;float:right; margin-top: 10px">Add Product</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav id="site-nav" role="navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul id="main_menu">
+                                <input type="hidden" id="cartTheme" value="{{config.theme}}">
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </section>
+
+    

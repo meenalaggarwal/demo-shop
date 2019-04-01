@@ -1,0 +1,77 @@
+{{> header}}
+<div class="productsWrapper col-md-10 col-md-offset-1">
+    <div class="row product-layout">
+        {{#ifCond results.length '==' 0}}
+            <div class="col-md-12">
+                <p class="text-danger">No products found</p>
+            </div>
+        {{/ifCond}}
+        {{#each results}}
+            <div class="{{perRowClass ../config.productsPerRow}}">
+                <div class="thumbnail">
+                    <div class="product_wrapper">
+                        <a href="#">
+                            <div class="vertical-center thumbnail-image-container">
+                                {{#if buffer}}
+                                    <img class="img-responsive" src="data:image/jpg;base64,{{this.buffer}} alt="...">
+                                {{else}}
+                                    <img class="img-responsive" src="/images/placeholder.png" alt="...">
+                                {{/if}}
+                            </div>
+                            <h3 class="product-title product-title-home top-pad-10">
+                                {{this.productTitle}}
+                            </h3>
+                        </a>
+                    </div>
+                    <h3 class="product-price text-center">
+                        {{currencySymbol ../config.currencySymbol}}{{formatAmount productPrice}}
+                    </h3>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+<input type="hidden" id="productsPerPage" value="{{productsPerPage}}" >
+<input type="hidden" id="pageNum" value="{{pageNum}}">
+<input type="hidden" id="paginateUrl" value="{{paginateUrl}}">
+<div class="col-md-12">
+    <div id="pager" class="text-center"></div>
+</div>
+
+<div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form enctype="multipart/form-data" action="/products/insert" method="post">
+          <div class="form-group" >
+            <label for="title" class="col-form-label">Product Title:</label>
+            <input type="text" name="title" class="form-control" id="title" required>
+          </div>
+          <div class="form-group">
+            <label for="price" class="col-form-label">Product Price:</label>
+            <input type="text" name="price" class="form-control" id="price" required>
+          </div>
+          <div class="form-group">
+            <label for="stock" class="col-form-label">Product Stock:</label>
+            <input type="text" name="stock" class="form-control" id="stock" required>
+          </div>
+          <div class="custom-file">
+            <input type="file" name="file" class="custom-file-input" id="inputGroupFile01" required>
+            <label class="custom-file-label" for="inputGroupFile01">Choose Image</label>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary" >Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{>footer}}
