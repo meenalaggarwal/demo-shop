@@ -23,7 +23,7 @@ router.get('/:page?', function(req, res, next)  {
     common.getProducts(req, page, {}, config)
     .then(function(results) {
         async.each(results.data, function(prod, callback) {
-            fs.readFile('./uploads/' + prod.productFileName, 'utf8', function(err, data) {  
+            fs.readFile('./uploads/' + prod.PRODUCTFILENAME, 'utf8', function(err, data) {  
                 if (err) console.error(colors.red('Error getting products for page', err));
                 prod.buffer = data;
                 return callback();

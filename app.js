@@ -3,14 +3,12 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var MongoClient = require('mongodb').MongoClient;
-var mongodbUri = require('mongodb-uri');
 var numeral = require('numeral');
 var hbs = require('hbs');
 var http = require('http');
 var config = require('./config');
 var oracledb = require('oracledb');
-var colors = require('colors')
+var colors = require('colors');
 
 var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/products');
@@ -109,35 +107,13 @@ app.on('uncaughtException', function(err) {
     process.exit(2);
 });
 
-var connection = oracledb.getConnection({
+oracledb.getConnection({
   user          : "admin",
   password      : "Meeyank_230826",
   connectString : "demoshop_high"
-}, function(err, rssult) {
-  console.log(err.stack)
-  console.log(rssult)
-});
-
-console.log(connection)
-
-MongoClient.connect(config.databaseConnectionString, {}, function(err, client) {
-    // On connection error we display then exit
-  if(err) {
-      console.log(colors.red('Error connecting to MongoDB: ' + err));
-      process.exit(2);
-  }
-
-  // select DB
-  var dbUriObj = mongodbUri.parse(config.databaseConnectionString);
-  var db;
-      db = client.db(dbUriObj.database);
-
-  // setup the collections
-  db.products = db.collection('products');
-
+}, function(err, connection) {
   // add db to app for routes
-  app.dbClient = client;
-  app.db = db;
+  app.db = connection;
   app.config = config;
   var port = normalizePort(process.env.PORT || '3000');
   /*var port = normalizePort('3000');*/

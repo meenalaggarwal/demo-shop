@@ -1,0 +1,30 @@
+shop_high = (description= (address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=kkskxbsucyfpat7_shop_high.atp.oraclecloud.com))(security=(ssl_server_cert_dn=
+        "CN=adwc.eucom-central-1.oraclecloud.com,OU=Oracle BMCS FRANKFURT,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
+shop_low = (description= (address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=kkskxbsucyfpat7_shop_low.atp.oraclecloud.com))(security=(ssl_server_cert_dn=
+        "CN=adwc.eucom-central-1.oraclecloud.com,OU=Oracle BMCS FRANKFURT,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
+shop_medium = (description= (address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=kkskxbsucyfpat7_shop_medium.atp.oraclecloud.com))(security=(ssl_server_cert_dn=
+        "CN=adwc.eucom-central-1.oraclecloud.com,OU=Oracle BMCS FRANKFURT,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
+shop_tp = (description= (address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=kkskxbsucyfpat7_shop_tp.atp.oraclecloud.com))(security=(ssl_server_cert_dn=
+        "CN=adwc.eucom-central-1.oraclecloud.com,OU=Oracle BMCS FRANKFURT,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
+shop_tpurgent = (description= (address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=kkskxbsucyfpat7_shop_tpurgent.atp.oraclecloud.com))(security=(ssl_server_cert_dn=
+        "CN=adwc.eucom-central-1.oraclecloud.com,OU=Oracle BMCS FRANKFURT,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
+demoshop_high = (description= (address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=kkskxbsucyfpat7_demoshop_high.atp.oraclecloud.com))(security=(ssl_server_cert_dn=
+        "CN=adwc.eucom-central-1.oraclecloud.com,OU=Oracle BMCS FRANKFURT,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
+demoshop_low = (description= (address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=kkskxbsucyfpat7_demoshop_low.atp.oraclecloud.com))(security=(ssl_server_cert_dn=
+        "CN=adwc.eucom-central-1.oraclecloud.com,OU=Oracle BMCS FRANKFURT,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
+demoshop_medium = (description= (address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=kkskxbsucyfpat7_demoshop_medium.atp.oraclecloud.com))(security=(ssl_server_cert_dn=
+        "CN=adwc.eucom-central-1.oraclecloud.com,OU=Oracle BMCS FRANKFURT,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
+demoshop_tp = (description= (address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=kkskxbsucyfpat7_demoshop_tp.atp.oraclecloud.com))(security=(ssl_server_cert_dn=
+        "CN=adwc.eucom-central-1.oraclecloud.com,OU=Oracle BMCS FRANKFURT,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+
+demoshop_tpurgent = (description= (address=(protocol=tcps)(port=1522)(host=adb.eu-frankfurt-1.oraclecloud.com))(connect_data=(service_name=kkskxbsucyfpat7_demoshop_tpurgent.atp.oraclecloud.com))(security=(ssl_server_cert_dn=
+        "CN=adwc.eucom-central-1.oraclecloud.com,OU=Oracle BMCS FRANKFURT,O=Oracle Corporation,L=Redwood City,ST=California,C=US"))   )
+

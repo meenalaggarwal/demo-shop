@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var uuidv1 = require('uuid/v1');
+var colors = require('colors');
 
 var multer = require("multer");
 
@@ -16,16 +18,20 @@ router.post('/insert', upload.single('file'), function(req, res) {
         productFileName: req.file.filename,
         productTitle: req.body.title,
         productPrice: req.body.price,
-        productAddedDate: new Date(),
-        productStock: req.body.stock ? parseInt(req.body.stock) : null
+        productStock: req.body.stock ? parseInt(req.body.stock) : 0
     };
-    db.products.insertOne(doc, function(err, newDoc) {
+    var stock = req.body.stock ? parseInt(req.body.stock) : 0;
+    var query = "Insert into products (id, productFileName, productTitle, productPrice, productStock) VALUES ('" + uuidv1() + "','" +
+    			req.file.filename + "','" + req.body.title + "','" + req.body.price + "'," + stock + ")";
+    db.execute(query, function(err, newDoc) {
         if(err) {
             console.log(colors.red('Error inserting document: ' + err));
             res.redirect('/');
         } else {
+        	db.execute('commit');
         	console.log('Succesfully added product');
             res.redirect('/');
+
         }
     });
 });
