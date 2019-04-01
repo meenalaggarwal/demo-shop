@@ -10,6 +10,7 @@ var hbs = require('hbs');
 var http = require('http');
 var config = require('./config');
 var oracledb = require('oracledb');
+var colors = require('colors')
 
 var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/products');
