@@ -110,8 +110,8 @@ app.on('uncaughtException', function(err) {
 
 var connection = oracledb.getConnection({
   user          : "admin",
-  password      : "meenal@1992",
-  connectString : "adb.eu-frankfurt-1.oraclecloud.com:1522/kkskxbsucyfpat7_demo_medium.atp.oraclecloud.com"
+  password      : "Meeyank_230826",
+  connectString : "demoshop_high"
 }, function(err, rssult) {
   console.log(err.stack)
   console.log(rssult)
