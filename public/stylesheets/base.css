@@ -23,7 +23,9 @@ body {
 
 .product-item{
     margin-top: 100px;
-    margin-right: 50;
+    margin-right: 40px;
+    margin-left: 40px;
+    width: 25%;
 }
 
 a, a:hover, a:focus, a:visited {
@@ -80,7 +82,6 @@ header .logo a {
 	height:60px;
 }
 .night-mode header .logo a {
-	background-image: url("../images/logo_white.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
 	opacity: 0.8;
@@ -537,25 +538,6 @@ fieldset{
 	margin-top: -15px;
 	margin-right: -19px;
 }
-.preview_resizer {
-	border: 1px solid #efefef;
-	padding: 0;
-	background-image: url(../images/full2.svg);
-	background-size: 100% auto;
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 26px;
-	height: 33px;
-	margin-top: -6px;
-	margin-left: 28px;
-	background-color: transparent;
-	opacity: 0.8;
-	outline: none;
-	-moz-outline-color: transparent;
-}
-.preview_resizer.full {
-	background-image: url(../images/restore2.svg);
-}
 body.full {
 	overflow-y: hidden;
 }
@@ -567,9 +549,7 @@ body.full {
 	left: 0;
 	z-index: 99999;
 }
-.panel.panel-default.full_screen .svg_container {
-	height: calc(100vh - 100px) !important;
-}
+
 @media (max-width:480px){
 	.cta_button{position: static; margin-top:20px;}
 	.welcome-box .box-row .cell{width: 100%;}

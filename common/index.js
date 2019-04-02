@@ -1,15 +1,5 @@
-module.exports.getProducts = function(req, page, query, config) {
+module.exports.getProducts = function(req) {
     var db = req.app.db;
-    var numberProducts = config.productsPerPage ? config.productsPerPage : 6;
-
-    var skip = 0;
-    if(page > 1) {
-        skip = (page - 1) * numberProducts;
-    }
-
-    if(!query) {
-        query = {};
-    }
     // Run our queries
     return Promise.all([
         db.execute('Select * from Products')

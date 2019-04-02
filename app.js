@@ -12,6 +12,7 @@ var colors = require('colors');
 
 var indexRouter = require('./routes/index');
 var productsRouter = require('./routes/products');
+var apiRouter = require('./API');
 
 var app = express();
 
@@ -30,10 +31,10 @@ hbs.registerHelper('perRowClass', function(numProducts) {
         return'col-md-6 col-xl-6 col m6 xl6 product-item';
     }
     if(parseInt(numProducts) === 3){
-        return'col-md-4 col-xl-4 col m4 xl4 product-item';
+        return'col-md-3 col-xl-3 col m3 xl3 product-item';
     }
     if(parseInt(numProducts) === 4){
-        return'col-md-3 col-xl-3 col m3 xl3 product-item';
+        return'col-md-2 col-xl-2 col m2 xl2 product-item';
     }
 
     return'col-md-6 col-xl-6 col m6 xl6 product-item';
@@ -72,7 +73,7 @@ hbs.registerHelper('formatAmount', function(amt){
 
 hbs.registerHelper('currencySymbol', function(value){
     if(typeof value === 'undefined' || value === ''){
-        return'$';
+        return'Rs.';
     }
     return value;
 });
@@ -83,6 +84,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/', apiRouter);
 app.use('/', indexRouter);
 app.use('/products', productsRouter);
 

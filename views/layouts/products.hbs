@@ -12,8 +12,8 @@
                     <div class="product_wrapper">
                         <a href="#">
                             <div class="vertical-center thumbnail-image-container">
-                                {{#if buffer}}
-                                    <img class="img-responsive" src="data:image/jpg;base64,{{this.buffer}} alt="...">
+                                {{#if PRODUCTFILENAME}}
+                                    <img class="img-responsive" src="/images/{{PRODUCTFILENAME}}" alt="...">
                                 {{else}}
                                     <img class="img-responsive" src="/images/placeholder.png" alt="...">
                                 {{/if}}
@@ -24,18 +24,12 @@
                         </a>
                     </div>
                     <h3 class="product-price text-center">
-                        {{currencySymbol ../config.currencySymbol}}{{formatAmount PRODUCTPRICE}}
+                        {{currencySymbol ../config.currencySymbol}}{{formatAmount PRODUCTPRICE}} [{{PRODUCTSTOCK}} left]
                     </h3>
                 </div>
             </div>
         {{/each}}
     </div>
-</div>
-<input type="hidden" id="productsPerPage" value="{{productsPerPage}}" >
-<input type="hidden" id="pageNum" value="{{pageNum}}">
-<input type="hidden" id="paginateUrl" value="{{paginateUrl}}">
-<div class="col-md-12">
-    <div id="pager" class="text-center"></div>
 </div>
 
 <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-hidden="true">

@@ -6,14 +6,13 @@ var colors = require('colors');
 var multer = require("multer");
 
 var upload = multer({
-  dest: "./uploads/"
+  dest: "./public/images/"
   // you might also want to set some limits: https://github.com/expressjs/multer#limits
 });
 
 // insert new product form action
 router.post('/insert', upload.single('file'), function(req, res) {
     var db = req.app.db;
-
     var doc = {
         productFileName: req.file.filename,
         productTitle: req.body.title,
